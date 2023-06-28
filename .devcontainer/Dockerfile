@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.licenses=APACHE2
 RUN apk update
 RUN apk add nginx
 RUN mkdir -p /etc/nginx /var/www
-COPY /workspaces/container-fundamentals/edge_server/config/nginx.conf /etc/nginx/
-COPY /workspaces/container-fundamentals/edge_server/web_content /var/www
+COPY edge_server/config/nginx.conf /etc/nginx/
+COPY edge_server/web_content /var/www
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
